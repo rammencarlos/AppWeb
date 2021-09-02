@@ -1,0 +1,75 @@
+<html>
+<head>
+    <title>Introducción a CSS</title>
+
+    <!--CSS Interno-->
+    <style>
+        /*Css por elemento*/
+        body {
+            background-color:#28c6b2;
+            padding: 30px;
+            margin:50px;
+        }
+
+        p{
+            font-size:15px;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color: blueviolet;
+        }
+
+        /*Css por ID*/
+        #h5Subtitulo {
+            color: red;
+            background-color: rgb(100,99,40);
+            border: 3px solid #4cff00;
+        }
+
+        /*Css por clase*/
+        .H5Custom {
+            border: 3px solid #4cff00;
+        }
+    </style>
+
+    <!--CSS Externo-->
+    <link rel="stylesheet" href="style.css" />
+
+</head>
+<body>
+    <h3>Intruducción a CSS</h3>
+    <h5 id="h5Subtitulo">Esto es un subtitulo con id</h5>
+    <h5 class="H5Custom">Esto es un subtitulo sin id pero con class</h5>
+
+    <!--CSS Inline-->
+    <div>
+        <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+            when an unknown printer took a galley of type and scrambled it to make a type
+            specimen book. It has survived not only five centuries, but also the leap into
+            electronic typesetting, remaining essentially unchanged. It was popularised in
+            the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
+            and more recently with desktop publishing software like Aldus PageMaker including
+            versions of Lorem Ipsum.
+        </p>
+
+        <p>El css lo podemos agregar de 3 formas: </p>
+        <ul>
+            <li>Inline</li>
+            <li>Interno</li>
+            <li>Externo</li>
+        </ul>
+        <label>Esto es un label</label>
+    </div>
+
+
+    <div>
+        <h5 class="H5Custom">Esto es el div2</h5>
+        <p id="pDiv2">El css lo podemos agregar de 3 formas: </p>
+
+    </div>
+
+
+
+</body>
+</html>
+
