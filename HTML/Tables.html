@@ -1,11 +1,89 @@
 ﻿<!DOCTYPE html>
-
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
-    <title></title>
+    <title>Tables</title>
+
+    <style>
+
+        #DivContainer{
+            text-align:center;
+        }
+
+        #Div1, #Div2{
+            display:inline;
+        }
+
+        table, th, td{
+            border: 1px solid black;
+            border-radius: 10px;
+            display:inline-table;
+        }
+
+        th, td {
+            /*padding-top: 5px;
+            padding-left: 5px;
+            padding-right: 5px;
+            padding-bottom: 5px;*/
+            padding: 5px;
+        }
+
+        th {
+            background-color:#ff6a00;
+        }
+
+        td {
+            background-color: #ffd800;
+            text-align: center;
+        }
+
+    </style>
+
+
 </head>
 <body>
+
+    <div id="DivContainer">
+
+        <div id="Div1">
+            <table style="width:45%">
+                <tr>
+                    <th style="width:50%">Nombre</th>
+                    <th style="width:20%">Número</th>
+                    <th style="width:30%">Email</th>
+                </tr>
+                <tr>
+                    <td>Carlos Ramos</td>
+                    <td>2241063132</td>
+                    <td>rammen.carlos@gmail.com</td>
+                </tr>
+                <tr>
+                    <td>Jose Martín Reyna</td>
+                    <td>55 123 456789</td>
+                    <td>test@test.com</td>
+                </tr>
+            </table>
+        </div>
+
+        <div id="Div2">
+            <table style="width:45%">
+                <tr>
+                    <th style="width:50%">Equipo</th>
+                    <th style="width:20%">División</th>
+                </tr>
+                <tr>
+                    <td>America</td>
+                    <td>Pumas</td>
+                </tr>
+                <tr>
+                    <td>1A</td>
+                    <td>1B</td>
+                </tr>
+            </table>
+        </div>
+
+    </div>
+
 
 </body>
 </html>
