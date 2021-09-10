@@ -30,3 +30,24 @@ body{
     margin-top: 500px;
     text-align:center;
 }
+
+
+/*Media Queries*/
+@media only screen and (max-width: 600px){
+
+    .header{
+        background-color:aqua;
+        height:50px;
+    }
+    .primaryImage{
+        display:none;
+    }
+
+    .secondaryImage{
+        width:32px;
+        height:32px;
+    }
+    .h1custom{
+        color:forestgreen;
+    }
+}
