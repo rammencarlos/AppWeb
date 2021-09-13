@@ -1,0 +1,92 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial;
+    margin: 0;
+}
+
+.header {
+    padding: 60px;
+    text-align: center;
+    background-color: #0094ff;
+    color: #FFF;
+}
+
+.navbar {
+    display: flex;
+    background-color: #444444;
+}
+
+    .navbar a {
+        color: #FFF;
+        padding: 14px 20px;
+        text-decoration: none;
+        text-align: center;
+    }
+
+        .navbar a:hover {
+            background-color: #e4e4e4;
+            color: #444444;
+        }
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.side {
+    flex: 30%;
+    background-color: #e4e4e4;
+    padding: 20px;
+}
+
+.main {
+    flex: 70%;
+    background-color: #FFF;
+    padding: 20px;
+}
+
+.img{
+    background-color:#b6ff00;
+    width:100%;
+    padding:20px;
+}
+
+.banner1 {
+    background-image: url(https://es.unesco.org/youth/toptips/user/pages/images/phases/phase_implementation-jumbo.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 200px;
+}
+
+.banner2 {
+    background-image: url(https://es.unesco.org/youth/toptips/user/pages/images/phases/phase_fundraising-jumbo.png);
+    background-repeat: no-repeat;
+    background-position:center;
+    height:200px;   
+}
+.footer {
+    background-color: #444444;
+    padding: 20px;
+    text-align: center;
+}
+
+@media (max-width: 700px)
+{
+    .row .navbar{
+        flex-direction:column;
+    }
+}
+
+@media (max-width: 850px) {
+    .header {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 950px) {
+    .header {
+        padding: 30px;
+    }
+}
