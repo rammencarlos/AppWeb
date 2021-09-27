@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+
+    <script>
+        //1. Number
+        let pi = 3.1416;
+        //---Error 
+        //alert("numero" / 2)
+
+        //2. BigInt - enteros mayores a 2*53-1 -- 9007199254740991
+        const bigIntValue = 9007199254740991;
+
+        //3. String
+        let str1 = "Hola ";
+        let phrase = `${str1} mundo`;
+        let phrase2 = `suma = ${1 + 2}`;
+
+        //4. Boolean
+        let bool1 = true;
+        let bool2 = 2>1;
+
+        //5. Null
+        let value1 = null;
+        let value2 = ""; //No es lo mismo
+
+        //6. Undefined - variable declarada pero no asignada
+        let value3 = undefined;
+
+        //7. Object
+        let person = {
+            nombre: 'Carlos',
+            Edad: 30,
+            Genero: 'M',
+            saludo: function () {
+                alert('Hola soy ' + this.nombre)
+            }
+        };
+
+        //8. Typeof o symbol
+        let type1 = typeof 0;
+        let type2 = typeof true;
+        let evalValue = true;
+        if (type2 == typeof evalValue) {
+            alert('Es el mismo tipo')
+        } else {
+            alert('No son el mismo tipo')
+        }
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
