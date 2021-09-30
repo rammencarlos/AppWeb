@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+
+    <script>
+        //1. Arrays
+        let arr = new Array();
+        arr = ['Hugo', 'Jose', 'Rodolfo'];
+        console.log(arr);
+        console.log(arr[0]);
+        console.log(arr.length);
+        console.log('--------------------------');
+
+
+        let arr2 = new Array();
+        arr2 = ['Hugo', { name: 'Jose' }, true, function () { console.log('Rodolfo'); }];
+        console.log(arr2[1].name);
+        console.log(arr2[2]);
+        arr2[3]();
+        console.log('--------------------------');
+
+        //Quitar ultimo elemento
+        let arr3 = ['Hugo', 'Jose', 'Rodolfo'];
+        arr3.pop();
+        console.log(arr3);
+        console.log('--------------------------');
+
+        let arr4 = ['Hugo', 'Jose', 'Rodolfo'];
+        //Agregar elemento
+        arr4.push('Janeth');
+        console.log(arr4);
+        //Quitar primer elemento
+        arr4.shift();
+        console.log(arr4);
+        //Agregar elemento en la posicion 0
+        arr4.unshift('Aldo');
+        console.log(arr4);
+
+        console.log('--------------------------For');
+        for (var i = 0; i < arr4.length; i++) {
+            console.log(arr4[i]);
+        }
+
+        console.log('--------------------------For colección');
+        for (let item in arr4) {
+            console.log(arr4[item]);
+        }
+
+        //fix
+        let arr5 = [
+            [1, 2],
+            [3, 4],
+            [5, 6]
+        ];
+
+        for (var i = 0; i < arr5.length; i++) {
+            for (var j = 0; j < arr5.length; j++) {
+                console.log(arr5[i][j]);
+            }
+        }
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

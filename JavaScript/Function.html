@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+
+    <script>
+        //Funciones
+        ///--------------------------------- variables locales
+        ShowMessage('Carlos');
+        function ShowMessage(message) {
+            //Cuerpo
+            let initialMessage = 'Hola ' + message;
+            //alert(initialMessage);
+        }
+
+        ///--------------------------------- variables externas
+        let user = 'Carlos';
+        let nameFunction = 'ShowMessage2';
+        function ShowMessage2(user, nameFunction) {
+            let message = 'Hola ' + user + ' : ' + nameFunction;
+            //alert(message)
+        }
+        ShowMessage2(user, nameFunction);
+
+        ///------------------------------return values
+        function Sum(arg) {
+            return arg + 3;
+        }
+        let response = Sum(5);
+        alert(response)
+
+
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>
