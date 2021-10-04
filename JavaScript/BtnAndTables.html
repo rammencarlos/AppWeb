@@ -1,0 +1,116 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Suma</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            let operandoA;
+            let operandoB;
+            let operador;
+
+            DisplayLock(false);
+            $('.n1').click(function () {
+                $("#result").append("1");
+                DisplayLock(true);
+            });
+
+            $('.n2').click(function () {
+                $("#result").append("2");
+                DisplayLock(true);
+            });
+            $('.n3').click(function () {
+                $("#result").append("3");
+                DisplayLock(true);
+            });
+            $('.n4').click(function () {
+                $("#result").append("4");
+                DisplayLock(true);
+            });
+            $('.sum').click(function () {
+                operandoA = parseFloat($("#result").text());
+                operador = "+";
+                clear();
+                DisplayLock(false);
+            });
+
+            $('.clear').click(function () {
+                DisplayLock(false);
+                clear();
+            });
+
+            $('.resolve').click(function () {
+                operandoB = parseFloat($("#result").text());
+                let result;
+                switch (operador) {
+                    case '+':
+                        result = parseFloat(operandoA) + parseFloat(operandoB);
+                        $("#result").html(result);
+                        break;
+                }
+            });
+        });
+
+        function clear() {
+            $("#result").html("");
+        }
+
+        function DisplayLock(isEnabled) {
+            !isEnabled ? $(".sum").prop("disabled", true) : $(".sum").removeAttr('disabled');
+            !isEnabled ? $(".resolve").prop("disabled", true) : $(".resolve").removeAttr('disabled');
+
+        }
+
+    </script>
+    <style>
+        #result {
+            font-family:Consolas;
+            display: block;
+            text-align: right;
+            font-size: 20px;
+            width: 200px;
+            height: 30px;
+            background-color: #000;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+    <table>
+        <tr>
+            <td colspan="3"><p id="result"></p></td>
+            <td>
+                <button class="clear">C</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button class="n3">3</button>
+            </td>
+            <td>
+                <button class="n4">4</button>
+            </td>
+            <td>
+                <button class="sum">+</button>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <button class="n1">1</button>
+            </td>
+            <td>
+                <button class="n2">2</button>
+            </td>
+            <td >
+                <button style="width:80%" class="resolve">=</button>
+            </td>
+        </tr>
+
+    </table>
+
+</body>
+</html>
