@@ -1,0 +1,25 @@
+﻿@model UserViewModel
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+
+<h5>Id: </h5>
+<label>@Model.Id</label>
+
+
+<h5>Nombre: </h5>
+<label>@Model.Name</label>
+
+<h5>Activo? </h5>
+@if (@Model.IsEnabled == true)
+{
+    <label>Usuario activo</label>
+}
+else
+{
+    <label>Usuario inactivo</label>
+}
+
