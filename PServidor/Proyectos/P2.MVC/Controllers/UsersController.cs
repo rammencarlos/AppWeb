@@ -18,7 +18,5 @@ namespace P2.MVC.Controllers
 
             return View(userVM);
         }
-
-
     }
 }
