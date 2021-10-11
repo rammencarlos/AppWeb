@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Practicas.Security;
+using System;
+using System.Collections.Generic;
 
 namespace Practicas
 {
@@ -6,18 +8,35 @@ namespace Practicas
     {
         static void Main(string[] args)
         {
-            Car nombreClase = new Car();
-            nombreClase.Model = "Ford";
-            nombreClase.Year = 2021;
+            UserEntity newUser = new UserEntity();
+            newUser.UserName = "Osito.Panda";
 
-            Console.WriteLine(nombreClase.Model);
-            Console.WriteLine(nombreClase.Year);
-            Console.WriteLine(nombreClase.GenerateCar());
+            UserCore userCore = new UserCore();
+            List<UserEntity> listUsers = userCore._listUsers;
 
-            WareHouse wareHouse = new WareHouse();
+            foreach (UserEntity user in listUsers)
+            {
+                Console.WriteLine("Id: " + user.Id);
+                Console.WriteLine("UserName: " + user.UserName);
+            }
 
-            string name = wareHouse.GetName();
-            Console.WriteLine(name);
+            int newId = userCore.CreateUser(newUser);
+            if (newId == 0)
+            {
+                Console.WriteLine("Error al generar el Id");
+            }
+            else
+            {
+                Console.WriteLine("Se agrego exitosamente el usuario");
+            }
+
+
+            foreach (UserEntity user in listUsers)
+            {
+                Console.WriteLine("Id: " + user.Id);
+                Console.WriteLine("UserName: " + user.UserName);
+            }
+
 
 
         }
