@@ -4,36 +4,98 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Utilities.Persistence;
 
 namespace P3.CRUD.Controllers
 {
     public class UserController : Controller
     {
+        /// <summary>
+        /// Retorna la vista Index.cshtml
+        /// </summary>
+        /// <returns></returns>
         public IActionResult Index()
         {
-            List<UserViewModel> users = new List<UserViewModel>();
-            
-            UserViewModel userModel = new UserViewModel();
-            userModel.Id = 1;
-            userModel.UserName = "carlos.ramos";
-            userModel.Name = "Carlos Ramos";
-            userModel.Password = "1234";
-            userModel.CreatedDate = DateTime.Now;
-            users.Add(userModel);
+            List<UserViewModel> users = UserRespository.Instance._users;
 
             return View(users);
         }
 
+        /// <summary>
+        /// Retorna la vista AddOrEdit.cshtml
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public IActionResult AddOrEdit(int id)
         {
-            return View();
+            UserViewModel user = new UserViewModel();
+            if (id != 0)
+            {
+               user =  UserRespository.Instance.GetUser(id);
+            }
+
+            return View(user);
         }
 
+
+        /// <summary>
+        /// No retorna una vista, solo ejecuta una acción
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns></returns>
         [HttpPost]
         [AutoValidateAntiforgeryToken]
-        public IActionResult FormAddOrEdit([FromForm] UserViewModel user)
+        public IActionResult AddOrEdit([FromForm] UserViewModel user)
         {
-            return View();
+            if (user.Id == 0)
+            {
+                if (ModelState.IsValid)
+                {
+                    UserRespository.Instance.CreateUser(user);
+                }
+                else
+                {
+                    return View(user);
+                }
+            }
+            else
+            {
+                UserRespository.Instance.UpdateUser(user);
+            }
+
+            return RedirectToAction("Index");
+        }
+
+        /// <summary>
+        /// No retorna una vista, solo ejecuta una acción
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public IActionResult Delete(int id)
+        {
+            UserViewModel user = new UserViewModel();
+            if (id != 0)
+            {
+              UserRespository.Instance.DeleteUser(id);
+            }
+
+            return RedirectToAction("Index");
+        }
+
+        /// <summary>
+        /// Retorna la vista Detail.cshtml
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public IActionResult Detail(int id)
+        {
+            UserViewModel user = new UserViewModel();
+            if (id != 0)
+            {
+                user = UserRespository.Instance.GetUser(id);
+            }
+
+            return View(user);
         }
 
     }

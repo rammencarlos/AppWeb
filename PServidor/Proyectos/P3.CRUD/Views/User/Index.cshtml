@@ -1,8 +1,15 @@
-﻿@model List<UserViewModel>
+﻿@using Utilities.Persistence;
+@model List<UserViewModel>
 @{
+
     ViewData["Title"] = "Lista de usuarios";
 }
 <h1>Lista de usuarios</h1>
+
+<p style="text-align:right;margin:20px;">
+    <a class="btn btn-outline-primary" asp-action="AddOrEdit">Nuevo Usuario</a>
+</p>
+
 <div class="table-responsive">
     <table class="table">
         <thead>

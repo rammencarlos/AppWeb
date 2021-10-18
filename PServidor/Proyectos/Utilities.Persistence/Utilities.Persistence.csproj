@@ -5,7 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\P3.CRUD\P3.CRUD.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,0 +1,50 @@
+﻿@using Utilities.Persistence;
+@model UserViewModel
+@{
+    ViewData["Title"] = "Detalle Usuario";
+}
+<h1>Detalle Usuario</h1>
+<div class="container">
+    <dl class="row">
+        <dt class="col-md-6">
+            @Html.DisplayNameFor(model => model.Id)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Id)
+        </dd>
+
+        <dt class="col-md-6">
+            @Html.DisplayNameFor(model => model.UserName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.UserName)
+        </dd>
+
+        <dt class="col-md-6">
+            @Html.DisplayNameFor(model => model.Password)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Password)
+        </dd>
+
+        <dt class="col-md-6">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt class="col-md-6">
+            @Html.DisplayNameFor(model => model.CreatedDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CreatedDate)
+        </dd>
+    </dl>
+
+    <div>
+        <a class="btn btn-primary" asp-action="AddOrEdit" asp-route-Id="@Model.Id">Editar</a>
+        <a class="btn btn-danger" asp-action="Index">Regresar</a>
+    </div>
+
+</div>
