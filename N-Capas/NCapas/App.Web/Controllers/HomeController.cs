@@ -1,0 +1,95 @@
+﻿using App.Core;
+using App.DTO;
+using App.Web.Models;
+using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
+using System.Diagnostics;
+
+namespace App.Web.Controllers
+{
+    public class HomeController : Controller
+    {
+        /// <summary>
+        /// Retorna la vista Index.cshtml
+        /// </summary>
+        /// <returns></returns>
+        public IActionResult Index()
+        {
+            //Reemplazar por la conexion a BD SQL Server
+            List<UserDTO> users = new List<UserDTO>();
+            return View(users);
+        }
+
+        /// <summary>
+        /// Retorna la vista AddOrEdit.cshtml
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public IActionResult AddOrEdit(int id)
+        {
+            UserDTO user = new UserDTO();
+            if (id != 0)
+            {
+                //Reemplazar por la conexion a BD SQL Server
+                user = new UserDTO();
+            }
+            return View(user);
+        }
+
+
+        /// <summary>
+        /// No retorna una vista, solo ejecuta una acción
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns></returns>
+        [HttpPost]
+        [AutoValidateAntiforgeryToken]
+        public IActionResult AddOrEdit([FromForm] UserDTO user)
+        {
+            if (user.Id == 0)
+            {
+                if (ModelState.IsValid)
+                {
+                    //Reemplazar por la conexion a BD SQL Server
+                    UserDTO userCreated = new UserCore().CreateUser(user);
+                }
+                else
+                {
+                    return View(user);
+                }
+            }
+            else
+            {
+                //Reemplazar por la conexion a BD SQL Server
+                //UserRespository.Instance.UpdateUser(user);
+            }
+
+            return RedirectToAction("Index");
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        public IActionResult Privacy()
+        {
+            return View();
+        }
+
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        public IActionResult Error()
+        {
+            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+    }
+}
