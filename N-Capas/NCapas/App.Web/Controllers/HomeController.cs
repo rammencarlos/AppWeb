@@ -16,7 +16,7 @@ namespace App.Web.Controllers
         public IActionResult Index()
         {
             //Reemplazar por la conexion a BD SQL Server
-            List<UserDTO> users = new List<UserDTO>();
+            List<UserDTO> users = new UserCore().List();
             return View(users);
         }
 
@@ -30,8 +30,7 @@ namespace App.Web.Controllers
             UserDTO user = new UserDTO();
             if (id != 0)
             {
-                //Reemplazar por la conexion a BD SQL Server
-                user = new UserDTO();
+                user = new UserCore().Get(id);
             }
             return View(user);
         }
@@ -51,7 +50,7 @@ namespace App.Web.Controllers
                 if (ModelState.IsValid)
                 {
                     //Reemplazar por la conexion a BD SQL Server
-                    UserDTO userCreated = new UserCore().CreateUser(user);
+                    UserDTO userCreated = new UserCore().Create(user);
                 }
                 else
                 {
@@ -61,7 +60,8 @@ namespace App.Web.Controllers
             else
             {
                 //Reemplazar por la conexion a BD SQL Server
-                //UserRespository.Instance.UpdateUser(user);
+                //UserDTO userCreated = new UserCore().Update(user);
+
             }
 
             return RedirectToAction("Index");
