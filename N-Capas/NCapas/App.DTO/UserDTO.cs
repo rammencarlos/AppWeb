@@ -7,11 +7,13 @@ namespace App.DTO
     public class UserDTO
     {
         public int Id { get; set; }
-
+        
+        
         [Required]
         [DisplayName("Nombre")]
         public string NickName { get; set; }
 
+        
         [Required]
         [DisplayName("Correo electrónico")]
         public string Email { get; set; }
