@@ -34,14 +34,12 @@ namespace App.Core
             return user;
         }
 
-        public UserDTO Update(UserDTO user)
+        public bool Update(UserDTO user)
         {
             user.UpdatedDate = DateTime.Now;
 
-           // int returnValue = new UserDA().Update(user);
-            //user.Id = returnValue;
-
-            return user;
+            bool isUpdated = new UserDA().Update(user);
+            return isUpdated;
         }
 
     }

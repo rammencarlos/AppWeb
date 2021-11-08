@@ -52,12 +52,11 @@ namespace App.DataAccess
             return id;
         }
 
-
-        public int Update(UserDTO user)
+        public bool Update(UserDTO user)
         {
             SqlConnection sqlConn = null;
             SqlDataReader sqlDr = null;
-            int id = 0;
+            bool isEnabled = false;
             try
             {
                 sqlConn = new SqlConnection("Server=(local); DataBase=NCapas;Integrated Security=SSPI");
@@ -67,13 +66,14 @@ namespace App.DataAccess
                 sqlcmd.CommandType = CommandType.StoredProcedure;
 
                 //Variables de entrada
+                sqlcmd.Parameters.AddWithValue("@Id_param", SqlDbType.VarChar).Value = user.Id;
                 sqlcmd.Parameters.AddWithValue("@NickName_param", SqlDbType.VarChar).Value = user.NickName;
                 sqlcmd.Parameters.AddWithValue("@Email_param", SqlDbType.VarChar).Value = user.Email;
                 sqlcmd.Parameters.AddWithValue("@Password_param", SqlDbType.VarChar).Value = user.Password;
-                sqlcmd.Parameters.AddWithValue("@UpdateDate_param", SqlDbType.VarChar).Value = user.CreatedDate;
+                sqlcmd.Parameters.AddWithValue("@UpdatedDate_param", SqlDbType.VarChar).Value = user.UpdatedDate;
 
                 sqlcmd.ExecuteNonQuery();
-                
+                isEnabled = true;
             }
             finally
             {
@@ -82,7 +82,7 @@ namespace App.DataAccess
                 if (sqlDr != null)
                     sqlDr.Close();
             }
-            return id;
+            return isEnabled;
         }
 
         public List<UserDTO> List()

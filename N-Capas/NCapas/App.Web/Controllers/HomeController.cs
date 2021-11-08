@@ -49,7 +49,6 @@ namespace App.Web.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    //Reemplazar por la conexion a BD SQL Server
                     UserDTO userCreated = new UserCore().Create(user);
                 }
                 else
@@ -59,27 +58,38 @@ namespace App.Web.Controllers
             }
             else
             {
-                //Reemplazar por la conexion a BD SQL Server
-                //UserDTO userCreated = new UserCore().Update(user);
+                bool isUpdated = new UserCore().Update(user);
 
             }
 
             return RedirectToAction("Index");
         }
 
+        /// <summary>
+        /// Retorna la vista Detail.cshtml
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public IActionResult Detail(int id)
+        {
+            UserDTO user = new UserDTO();
+            if (id != 0)
+            {
+                user = new UserCore().Get(id);
+            }
+            return View(user);
+        }
 
+        public IActionResult Delete(int id)
+        {
+            UserDTO user = new UserDTO();
+            if (id != 0)
+            {
+                //UserRespository.Instance.DeleteUser(id);
+            }
 
-
-
-
-
-
-
-
-
-
-
-
+            return RedirectToAction("Index");
+        }
 
         public IActionResult Privacy()
         {
