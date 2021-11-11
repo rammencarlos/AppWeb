@@ -12,4 +12,8 @@
     <ProjectReference Include="..\App.DTO\App.DTO.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="DB Restore\" />
+  </ItemGroup>
+
 </Project>

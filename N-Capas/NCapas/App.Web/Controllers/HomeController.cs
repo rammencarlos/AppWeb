@@ -85,7 +85,7 @@ namespace App.Web.Controllers
             UserDTO user = new UserDTO();
             if (id != 0)
             {
-                //UserRespository.Instance.DeleteUser(id);
+                new UserCore().Delete(id);
             }
 
             return RedirectToAction("Index");

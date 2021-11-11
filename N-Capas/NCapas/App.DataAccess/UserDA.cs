@@ -11,7 +11,7 @@ namespace App.DataAccess
 {
     public class UserDA
     {
-        public int CreateUser(UserDTO user)
+        public int Create(UserDTO user)
         {
             SqlConnection sqlConn = null;
             SqlDataReader sqlDr = null;
@@ -138,7 +138,6 @@ namespace App.DataAccess
             return listUsers;
         }
 
-
         public UserDTO Get(int id)
         {
             SqlConnection sqlConn = null;
@@ -196,6 +195,33 @@ namespace App.DataAccess
             return user;
         }
 
+        public bool Delete(int id)
+        {
+            SqlConnection sqlConn = null;
+            SqlDataReader sqlDr = null;
+            bool isDeleted = false;
+            try
+            {
+                sqlConn = new SqlConnection("Server=(local); DataBase=NCapas;Integrated Security=SSPI");
+                sqlConn.Open();
 
+                SqlCommand sqlcmd = new SqlCommand("DeleteUser", sqlConn);
+                sqlcmd.CommandType = CommandType.StoredProcedure;
+
+                sqlcmd.Parameters.AddWithValue("@Id_param", SqlDbType.VarChar).Value = id;
+                sqlcmd.Parameters.AddWithValue("@UpdatedDate_param", SqlDbType.VarChar).Value = DateTime.Now;
+
+                sqlcmd.ExecuteNonQuery();
+                isDeleted = true;
+            }
+            finally
+            {
+                if (sqlConn != null)
+                    sqlConn.Close();
+                if (sqlDr != null)
+                    sqlDr.Close();
+            }
+            return isDeleted;
+        }
     }
 }
