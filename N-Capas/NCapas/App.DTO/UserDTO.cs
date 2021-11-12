@@ -10,6 +10,7 @@ namespace App.DTO
         
         [Required]
         [DisplayName("Nombre")]
+        [MaxLength(16, ErrorMessage = "La logitud maxima es de 16 caracteres")]
         public string NickName { get; set; }
         
         [Required]
