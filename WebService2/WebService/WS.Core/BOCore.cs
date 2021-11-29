@@ -12,14 +12,12 @@ namespace WS.Core
     {
         public BODTODetail Get(int id)
         {
-            return new BODTODetail();
+            return new BODA().Get(id);
         }
 
         public int Create(BODTOCreate bo)
         {
-            BODA boda = new BODA();
-            int id = boda.Create(bo);
-            return id;
+            return new BODA().Create(bo);
         }
 
         public BODTODetail Update(BODTOUpdate bo)
@@ -29,8 +27,7 @@ namespace WS.Core
 
         public List<BODTODetail> List()
         {
-            return new List<BODTODetail>();
+            return new BODA().List();
         }
-
     }
 }

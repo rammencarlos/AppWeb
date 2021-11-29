@@ -14,7 +14,7 @@ namespace WS.DTO.BranchOffie
         public string Country { get; set; }
         public string State { set; get; }
         public string City { set; get; }
-        public string Zip { set; get; }
+        public string ZIP { set; get; }
         public string Street { set; get; }
         public string ExternalNumber { set; get; }
         public string PhoneNumber { get; set; }
