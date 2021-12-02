@@ -19,7 +19,6 @@ namespace WS.DTO.BranchOffie
         public string PhoneNumber { get; set; }
         public string Email { get; set; }
         public string UrlMaps { get; set; }
-        public DateTime UpdateDate { get; set; }
         public bool IsEnabled { get; set; }
     }
 }

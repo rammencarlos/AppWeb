@@ -20,14 +20,14 @@ namespace WS.Core
             return new BODA().Create(bo);
         }
 
-        public BODTODetail Update(BODTOUpdate bo)
-        {
-            return new BODTODetail();
-        }
-
         public List<BODTODetail> List()
         {
             return new BODA().List();
+        }
+
+        public int Update(BODTOUpdate bo)
+        {
+            return new BODA().Update(bo);
         }
     }
 }

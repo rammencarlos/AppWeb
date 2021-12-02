@@ -82,5 +82,33 @@ namespace WS.API.Controllers
             return Json(response, JsonRequestBehavior.AllowGet);
         }
 
+        [HttpPost]
+        public ActionResult Update(BODTOUpdate bo)
+        {
+            ResponseDTO response = new ResponseDTO();
+            try
+            {
+                int result = new BOCore().Update(bo);
+                if (result != 0)
+                {
+                    response.Message = "Actualizado correctamente";
+                    response.StatusCode = 200;
+                    response.ResponseObject = bo;
+                }
+                else {
+                    response.Message = "Error: el registro no se actualizo";
+                    response.StatusCode = 500;
+                    response.ResponseObject = null;
+                }
+            }
+            catch (Exception ex)
+            {
+                response.Message = "Error: " + ex.Message;
+                response.StatusCode = 500;
+                response.ResponseObject = null;
+            }
+            return Json(response, JsonRequestBehavior.AllowGet);
+        }
+
     }
 }

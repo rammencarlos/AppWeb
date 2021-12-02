@@ -64,9 +64,40 @@ namespace WS.DA
             return newBo.Id;
         }
 
-        public BODTODetail Update(BODTOUpdate bo)
+        public int Update(BODTOUpdate bo)
         {
-            return new BODTODetail();
+            using (var context = new OxxoEntities())
+            {
+                //Lambda
+                var data = context.BranchOffice.FirstOrDefault(x => x.Id == bo.Id);
+
+                //LINQ
+                //var bo = (from c in context.BranchOffice.ToList()
+                //          where c.Id == id
+                //          select c).SingleOrDefault();
+                if (data != null)
+                {
+                    data.Name = bo.Name;
+                    data.Code = bo.Code;
+                    data.City = bo.City;
+                    data.Street = bo.Street;
+                    data.ExternalNumber = bo.ExternalNumber;
+                    data.Manager = bo.Manager;
+                    data.PhoneNumber = bo.PhoneNumber;
+                    data.Email = bo.Email;
+                    data.UrlMaps = bo.UrlMaps;
+                    data.UpdateDate = DateTime.Now;
+                    data.IsEnabled = bo.IsEnabled;
+                    context.SaveChanges();
+                }
+                else
+                {
+                    throw new Exception("Error registro no actualizado");
+                }
+
+
+            }
+            return bo.Id;
         }
 
         public List<BODTODetail> List()
