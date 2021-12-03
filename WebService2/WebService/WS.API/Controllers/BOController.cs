@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Web;
+using System.Web.Http.Cors;
 using System.Web.Mvc;
 using WS.Core;
 using WS.DTO;
