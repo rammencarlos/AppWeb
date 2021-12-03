@@ -130,6 +130,25 @@ namespace WS.DA
             return list;
         }
 
+        public bool Delete(int id)
+        {
+            using (var context = new OxxoEntities())
+            {
+                var bo = (from c in context.BranchOffice.ToList()
+                          where c.Id == id
+                          select c).SingleOrDefault();
+                if (bo != null)
+                {
+                    context.BranchOffice.Remove(bo);
+                    context.SaveChanges();
+                }
+                else
+                {
+                    throw new Exception("Error registro no eliminado");
+                }
+            }
+            return true;
+        }
 
     }
 }

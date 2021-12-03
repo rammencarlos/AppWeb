@@ -11,16 +11,15 @@
 
 <div class="row">
     <div class="card-group pt-5" id="oxxos">
-
     </div>
 </div>
 
 <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.js"></script>
-
 <script>
     $(function () {
 
         $("#btnList").click(function () {
+
             $.ajax({
                 type: "GET",
                 url: "https://localhost:44351/BO/List",
@@ -52,6 +51,7 @@
                 error: function (data) {
                 }
             });
+
         });
     });
 </script>

@@ -111,5 +111,26 @@ namespace WS.API.Controllers
             return Json(response, JsonRequestBehavior.AllowGet);
         }
 
+        [HttpGet]
+        public ActionResult Delete(int id)
+        {
+            ResponseDTO response = new ResponseDTO();
+            try
+            {
+                bool isDelete = new BOCore().Delete(id);
+
+                response.Message = isDelete ? "Registro eliminado" : "Registro no elimado";
+                response.StatusCode = 200;
+                response.ResponseObject = null;
+            }
+            catch (Exception ex)
+            {
+                response.Message = "Error: " + ex.Message;
+                response.StatusCode = 500;
+                response.ResponseObject = null;
+            }
+            return Json(response, JsonRequestBehavior.AllowGet);
+        }
+
     }
 }

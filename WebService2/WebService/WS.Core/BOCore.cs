@@ -29,5 +29,9 @@ namespace WS.Core
         {
             return new BODA().Update(bo);
         }
+        public bool Delete(int id)
+        {
+            return new BODA().Delete(id);
+        }
     }
 }
