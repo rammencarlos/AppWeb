@@ -20,6 +20,7 @@ namespace WS.MVCCore.Controllers
 
         public IActionResult Index()
         {
+
             return View();
         }
 

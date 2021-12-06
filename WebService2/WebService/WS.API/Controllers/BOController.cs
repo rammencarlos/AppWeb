@@ -21,6 +21,7 @@ namespace WS.API.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Create(BODTOCreate bo)
         {
             ResponseDTO response = new ResponseDTO();
@@ -63,6 +64,7 @@ namespace WS.API.Controllers
         }
 
         [HttpGet]
+        [ValidateAntiForgeryToken]
         public ActionResult Get(int id)
         {
             ResponseDTO response = new ResponseDTO();
@@ -84,6 +86,7 @@ namespace WS.API.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Update(BODTOUpdate bo)
         {
             ResponseDTO response = new ResponseDTO();
@@ -112,6 +115,7 @@ namespace WS.API.Controllers
         }
 
         [HttpGet]
+        [ValidateAntiForgeryToken]
         public ActionResult Delete(int id)
         {
             ResponseDTO response = new ResponseDTO();
