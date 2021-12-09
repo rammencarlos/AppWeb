@@ -50,8 +50,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="LaptopDA.cs" />
     <Compile Include="BODA.cs" />
     <Compile Include="BranchOffice.cs">
+      <DependentUpon>ModelOxxo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ExampleTable.cs">
+      <DependentUpon>ModelOxxo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Laptop.cs">
       <DependentUpon>ModelOxxo.tt</DependentUpon>
     </Compile>
     <Compile Include="ModelOxxo.Context.cs">
@@ -70,34 +77,20 @@
       <DependentUpon>ModelOxxo.edmx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="sysdiagrams.cs">
+    <Compile Include="Toys.cs">
       <DependentUpon>ModelOxxo.tt</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.Config" />
     <EntityDeploy Include="ModelOxxo.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>ModelOxxo.Designer.cs</LastGenOutput>
     </EntityDeploy>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.Config" />
     <None Include="ModelOxxo.edmx.diagram">
       <DependentUpon>ModelOxxo.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="ModelOxxo.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>ModelOxxo.Context.cs</LastGenOutput>
-      <DependentUpon>ModelOxxo.edmx</DependentUpon>
-    </Content>
-    <Content Include="ModelOxxo.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ModelOxxo.edmx</DependentUpon>
-      <LastGenOutput>ModelOxxo.cs</LastGenOutput>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
@@ -107,6 +100,18 @@
       <Project>{97362F32-F7A8-4EB1-BB43-3C4FA8B19048}</Project>
       <Name>WS.DTO</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ModelOxxo.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelOxxo.edmx</DependentUpon>
+      <LastGenOutput>ModelOxxo.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="ModelOxxo.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelOxxo.edmx</DependentUpon>
+      <LastGenOutput>ModelOxxo.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

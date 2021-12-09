@@ -41,6 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Laptop\LaptopDTO.cs" />
+    <Compile Include="Laptop\LaptopDTOCreate.cs" />
+    <Compile Include="Laptop\LaptopDTODetail.cs" />
+    <Compile Include="Laptop\LaptopDTOUpdate.cs" />
     <Compile Include="BranchOffie\BODTO.cs" />
     <Compile Include="BranchOffie\BODTOCreate.cs" />
     <Compile Include="BranchOffie\BODTODetail.cs" />

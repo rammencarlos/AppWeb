@@ -12,12 +12,11 @@ namespace WS.DA
     using System;
     using System.Collections.Generic;
     
-    public partial class sysdiagrams
+    public partial class Laptop
     {
-        public string name { get; set; }
-        public int principal_id { get; set; }
-        public int diagram_id { get; set; }
-        public Nullable<int> version { get; set; }
-        public byte[] definition { get; set; }
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public System.DateTime CreateDate { get; set; }
+        public Nullable<System.DateTime> UpdateDate { get; set; }
     }
 }

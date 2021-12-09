@@ -4,9 +4,11 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="024d911ed35e437f8cf3b741ca99cc03" Name="Diagram1">
-        <EntityTypeShape EntityType="OxxoModel.BranchOffice" Width="1.5" PointX="8.125" PointY="1.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="OxxoModel.sysdiagrams" Width="1.5" PointX="1" PointY="1.875" IsExpanded="true" />
+      <Diagram DiagramId="3e0e0a058b0c418396d3579f5e979951" Name="Diagram1">
+        <EntityTypeShape EntityType="db_a77a14_iccwebappModel.BranchOffice" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_a77a14_iccwebappModel.Laptop" Width="1.5" PointX="7.5" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_a77a14_iccwebappModel.Toys" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_a77a14_iccwebappModel.ExampleTable" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -26,6 +26,8 @@ namespace WS.DA
         }
     
         public virtual DbSet<BranchOffice> BranchOffice { get; set; }
-        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
+        public virtual DbSet<Laptop> Laptop { get; set; }
+        public virtual DbSet<Toys> Toys { get; set; }
+        public virtual DbSet<ExampleTable> ExampleTable { get; set; }
     }
 }

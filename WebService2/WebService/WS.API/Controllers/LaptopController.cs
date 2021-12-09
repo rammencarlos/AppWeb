@@ -8,11 +8,11 @@ using System.Web.Http.Cors;
 using System.Web.Mvc;
 using WS.Core;
 using WS.DTO;
-using WS.DTO.BranchOffie;
+using WS.DTO.Laptop;
 
 namespace WS.API.Controllers
 {
-    public class BOController : Controller
+    public class LaptopController : Controller
     {
 
         // GET: BO
@@ -22,12 +22,12 @@ namespace WS.API.Controllers
         }
 
         [HttpPost]
-        public ActionResult Create(BODTOCreate bo)
+        public ActionResult Create(LaptopDTOCreate bo)
         {
             ResponseDTO response = new ResponseDTO();
             try
             {
-                int id = new BOCore().Create(bo);
+                int id = new LaptopCore().Create(bo);
 
                 response.Message = "Registro creado exitosamente";
                 response.StatusCode = 200;
@@ -48,7 +48,7 @@ namespace WS.API.Controllers
             ResponseDTO response = new ResponseDTO();
             try
             {
-               List<BODTODetail> list = new BOCore().List();
+               List<LaptopDTODetail> list = new LaptopCore().List();
 
                 response.Message = "Listado correctamente";
                 response.StatusCode = 200;
@@ -69,7 +69,7 @@ namespace WS.API.Controllers
             ResponseDTO response = new ResponseDTO();
             try
             {
-                BODTODetail bo = new BOCore().Get(id);
+                LaptopDTODetail bo = new LaptopCore().Get(id);
 
                 response.Message = "Listado correctamente";
                 response.StatusCode = 200;
@@ -85,12 +85,12 @@ namespace WS.API.Controllers
         }
 
         [HttpPost]
-        public ActionResult Update(BODTOUpdate bo)
+        public ActionResult Update(LaptopDTOUpdate bo)
         {
             ResponseDTO response = new ResponseDTO();
             try
             {
-                int result = new BOCore().Update(bo);
+                int result = new LaptopCore().Update(bo);
                 if (result != 0)
                 {
                     response.Message = "Actualizado correctamente";
@@ -118,7 +118,7 @@ namespace WS.API.Controllers
             ResponseDTO response = new ResponseDTO();
             try
             {
-                bool isDelete = new BOCore().Delete(id);
+                bool isDelete = new LaptopCore().Delete(id);
 
                 response.Message = isDelete ? "Registro eliminado" : "Registro no elimado";
                 response.StatusCode = 200;
